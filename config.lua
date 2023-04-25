@@ -10,7 +10,7 @@ Config.DisablePoliceStress = false -- Default: false, If true will disable stres
 Config.FuelScript = 'LegacyFuel' -- change to lj-fuel if you use lj-fuel or something else if you use any other LegcyFuel compatible script
 
 -- Admin only to change hud icons/shapes
-Config.AdminOnly = false
+Config.AdminOnly = true
 
 -- Stress
 Config.WhitelistedWeaponArmed = { -- weapons specifically whitelisted to not show armed mode

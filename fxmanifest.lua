@@ -4,21 +4,22 @@ game 'gta5'
 description 'ps-hud'
 version '2.1.0'
 
+lua54 'yes'
+use_fxv2_oal 'yes'
+
 shared_scripts {
-	'@qb-core/shared/locale.lua',
-	'locales/en.lua',
-	'locales/*.lua',
+	'@es_extended/imports.lua',
+	'@ox_lib/init.lua',
 	'config.lua',
 	'uiconfig.lua'
 }
 
 client_script 'client.lua'
 server_script 'server.lua'
-lua54 'yes'
-use_fxv2_oal 'yes'
 
 ui_page 'html/index.html'
 
 files {
 	'html/*',
+	'locales/*.json',
 }

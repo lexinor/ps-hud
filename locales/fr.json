@@ -1,0 +1,23 @@
+{
+    "notify.hud_settings_loaded": "Paramètres du HUD chargés!",
+    "notify.hud_restart": "L'HUD redémarre!",
+    "notify.hud_start": "L'HUD a demarré!",
+    "notify.hud_command_info": "Cette commande réinitialise vos paramètre d'HUD!",
+    "notify.load_square_map": "Chargement de la minimap carré...",
+    "notify.loaded_square_map": "La minimap carré a chargé!",
+    "notify.load_circle_map": "Chargement de la minimap ronde...",
+    "notify.loaded_circle_map": "La minimap ronde a chargé!",
+    "notify.cinematic_on": "Mode cinématique activé!",
+    "notify.cinematic_off": "Mode cinématique désactivé!",
+    "notify.engine_on": "Moteur allumé!",
+    "notify.engine_off": "Moteur éteint!",
+    "notify.low_fuel": "Niveau d'essence bas!",
+    "notify.access_denied": "Vous n'êtes pas autorisé!",
+    "notify.stress_gain": "Vous stressez!",
+    "notify.stress_removed": "Vous-vous relaxez!",
+    "info.toggle_engine": "Allumer/Eteindre Moteur",
+    "info.open_menu": "Ouvrir Menu",
+    "info.check_cash_balance": "Consulter Argent",
+    "info.check_bank_balance": "Consulter Compte Bancaire",
+    "info.toggle_dev_mode": "Activer/Désactiver Mode développeur"
+}
