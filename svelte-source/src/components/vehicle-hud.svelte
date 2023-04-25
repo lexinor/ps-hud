@@ -13,7 +13,7 @@
   <div class="responsive" id="speedometer">
     <PartialCircleRing maxLengthDisplay={66} rotateDegree={212} ringSize={5.5} progressColor={"white"}
       outlineColor={"black"} outlineColorOpacity={0.6} height={60} width={60} progressValue={$VehicleHudStore.speed}
-      text={"MPH"} displayNumber={$VehicleHudStore.speed} maxProgressValue={180}
+      text={"KMH"} displayNumber={$VehicleHudStore.speed} maxProgressValue={180}
     />
   </div>
   <div class="responsive" id="fuelgauge">

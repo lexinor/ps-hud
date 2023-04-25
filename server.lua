@@ -1,13 +1,19 @@
 lib.locale()
+SVConfig = {}
+SVConfig.AdminGroups = {
+    ["dev"] = true,
+    ["superadmin"] = true,
+}
+
 local ResetStress = false
 
 ESX.RegisterCommand("money", {"user"}, function(xPlayer, args, showError)
-    local cashamount = xPlayer.getAccount("money")
+    local cashamount = xPlayer.getAccount("money").money
     TriggerClientEvent('hud:client:ShowAccounts', xPlayer.source, "money", cashamount)
 end, false, { help = locale('info.check_bank_balance') })
 
 ESX.RegisterCommand("bank", {"user"}, function(xPlayer, args, showError)
-    local bankamount = xPlayer.getAccount("bank")
+    local bankamount = xPlayer.getAccount("bank").money
     TriggerClientEvent('hud:client:ShowAccounts', xPlayer.source, "bank", bankamount)
 end, false, { help = locale('info.check_bank_balance') })
 
@@ -202,7 +208,7 @@ ESX.RegisterServerCallback('hud:server:getRank', function(source, cb)
     if Player then
         local playerGroup = Player.getGroup()
 
-        if playerGroup then 
+        if SVConfig.AdminGroups[playerGroup] then 
             cb(true)
         else
             cb(true)
