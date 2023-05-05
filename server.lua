@@ -7,6 +7,14 @@ SVConfig.AdminGroups = {
 
 local ResetStress = false
 
+RegisterNetEvent('esx:playerLoaded', function(player, xPlayer, isNew)
+    Player(xPlayer.source).state:set("isLoggedIn", true, true)
+end)
+
+RegisterNetEvent('esx:playerDropped', function(playerId, reason)
+    Player(playerId).state:set("isLoggedIn", false, true)
+end)
+
 ESX.RegisterCommand("money", {"user"}, function(xPlayer, args, showError)
     local cashamount = xPlayer.getAccount("money").money
     TriggerClientEvent('hud:client:ShowAccounts', xPlayer.source, "money", cashamount)
@@ -211,9 +219,9 @@ ESX.RegisterServerCallback('hud:server:getRank', function(source, cb)
         if SVConfig.AdminGroups[playerGroup] then 
             cb(true)
         else
-            cb(true)
+            cb(false)
         end
     else
-        cb(true)
+        cb(false)
     end
 end)

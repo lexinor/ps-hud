@@ -152,6 +152,7 @@ AddEventHandler('onResourceStart', function(resourceName)
     -- local hudSettings = GetResourceKvpString('hudSettings')
     -- if hudSettings then loadSettings(json.decode(hudSettings)) end
     loadSettings()
+    PlayerData = ESX.GetPlayerData()
 end)
 
 AddEventHandler("pma-voice:radioActive", function(isRadioTalking)
@@ -882,7 +883,7 @@ CreateThread(function()
                 end
             end
 
-            playerDead = IsEntityDead(player) or PlayerData.metadata["inlaststand"] or PlayerData.metadata["isdead"] or false
+            playerDead = IsEntityDead(player) or LocalPlayer.state.isDead or false
             parachute = GetPedParachuteState(player)
 
             -- Stamina

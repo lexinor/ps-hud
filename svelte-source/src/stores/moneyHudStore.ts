@@ -64,7 +64,7 @@ const store = () => {
       });
     },
     formatMoney(value: number) {
-      const formatter = new Intl.NumberFormat("en-US", {
+      const formatter = new Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 0,
