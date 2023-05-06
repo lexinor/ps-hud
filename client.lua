@@ -855,7 +855,8 @@ local function getFuelLevel(vehicle)
     local updateTick = GetGameTimer()
     if (updateTick - lastFuelUpdate) > 2000 then
         lastFuelUpdate = updateTick
-        lastFuelCheck = math.floor(exports[Config.FuelScript]:GetFuel(vehicle))
+        --lastFuelCheck = math.floor(exports[Config.FuelScript]:GetFuel(vehicle))
+        lastFuelCheck = math.floor(Entity(vehicle).state.fuel)
     end
     return lastFuelCheck
 end
@@ -1033,7 +1034,9 @@ CreateThread(function()
         if LocalPlayer.state.isLoggedIn then
             local ped = cache.ped or PlayerPedId()
             if IsPedInAnyVehicle(ped, false) and not IsThisModelABicycle(GetEntityModel(GetVehiclePedIsIn(ped, false))) and not isElectric(GetVehiclePedIsIn(ped, false)) then
-                if exports[Config.FuelScript]:GetFuel(GetVehiclePedIsIn(ped, false)) <= 20 then -- At 20% Fuel Left
+                --if exports[Config.FuelScript]:GetFuel(GetVehiclePedIsIn(ped, false)) <= 20 then -- At 20% Fuel Left
+                if Entity(GetVehiclePedIsIn(ped, false)).state.fuel <= 20 then -- At 20% Fuel Left
+                    
                     if Menu.isLowFuelChecked then
                         TriggerServerEvent("InteractSound_SV:PlayOnSource", "pager", 0.10)
                         ESX.ShowNotification(locale("notify.low_fuel"), "error")
@@ -1085,7 +1088,7 @@ CreateThread(function()
         if LocalPlayer.state.isLoggedIn then
             local ped = cache.ped or PlayerPedId()
             if IsPedInAnyVehicle(ped, false) then
-                hasHarness()
+                --hasHarness()
                 local veh = GetEntityModel(GetVehiclePedIsIn(ped, false))
                 if seatbeltOn ~= true and IsThisModelACar(veh) then
                     TriggerEvent("InteractSound_CL:PlayOnOne", "beltalarm", 0.6)
