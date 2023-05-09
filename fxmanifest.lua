@@ -14,8 +14,13 @@ shared_scripts {
 	'uiconfig.lua'
 }
 
-client_script 'client.lua'
-server_script 'server.lua'
+client_scripts {
+	'client.lua',
+}
+
+server_scripts {
+	'server.lua',
+}
 
 ui_page 'html/index.html'
 

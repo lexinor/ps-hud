@@ -855,14 +855,12 @@ local function getFuelLevel(vehicle)
     local updateTick = GetGameTimer()
     if (updateTick - lastFuelUpdate) > 2000 then
         lastFuelUpdate = updateTick
-        --lastFuelCheck = math.floor(exports[Config.FuelScript]:GetFuel(vehicle))
-        lastFuelCheck = math.floor(Entity(vehicle).state.fuel)
+        lastFuelCheck = math.floor(Entity(vehicle).state.fuel or 65.0)
     end
     return lastFuelCheck
 end
 
 -- HUD Update loop
-
 CreateThread(function()
     local wasInVehicle = false
     while true do        
